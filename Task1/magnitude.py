@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[5]:
+# In[2]:
 
 
 # Sirius data
@@ -15,7 +15,7 @@ m = float(apparentMagnitude)
 M = float(absoluteMagnitude)
 
 d = 10.0 * pow( 10.0, (m-M)/5.0 ) * 3.26164
-print(d)
+print(f"The distance to Sirius is {d} ly")
 
 
 # In[ ]:
