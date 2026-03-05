@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
+# In[2]:
 
 
 import numpy as np
@@ -36,11 +36,7 @@ def RockPapSci(RPS, result):
     count = 1
     while game:
         print(f"The programme chose: {result}")
-        if RPS != 'R' and 'P' and 'S':  # Evaluates whether the input is valid. If not, enter something again.
-            print("Invalid input, try again")
-            RPS = input("Enter R, P or S to try again:")
-            result = possible_input[indx]
-        elif RPS == 'R' and result == 'S':
+        if RPS == 'R' and result == 'S':
             game = False  # Ends the game
             print(Win)
         elif RPS == 'P' and result == 'S':
@@ -58,11 +54,14 @@ def RockPapSci(RPS, result):
         elif RPS == 'S' and result == 'R':
             game = False
             print(Lose)
-        else:
-            print(f"It's a tie, try again.")
-            RPS = input("Enter R, P or S to try again:")  # Asks user to enter a new number due to a draw.
-            result = possible_input[indx]
-            count += 1  # Ups the count of number of tries by 1
+        elif RPS == result:
+                print(f"It's a tie, try again.")
+                RPS = input("Enter R, P or S to try again:")  # Asks user to enter a new number due to a draw.
+                result = possible_input[indx]
+                count += 1  # Ups the count of number of tries by 1
+        elif RPS != 'R' or 'P' or 'S':  # Evaluates whether the input is valid. If not, enter something again.
+            print("Invalid input, try again")
+            RPS = input("Enter R, P or S to try again:")
     return count
 
 print(f"You tried {RockPapSci(RPS, result)} times.")
