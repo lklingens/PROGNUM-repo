@@ -1,4 +1,0 @@
-# Rotation curve for NGC1234
-# Tilted ring parameters
-#    radius       width     density   error
-     4.2          0.1       200       10
